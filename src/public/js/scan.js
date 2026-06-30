@@ -312,6 +312,7 @@ const ScanPage = {
           location_id: document.getElementById('qr-location').value || null,
         });
         closeModal();
+        document.getElementById('scan-result').innerHTML = '';
         showToast('機材を登録しました。続けてスキャンすると貸出リストに追加されます', 'success');
       } catch (err) {
         showToast(err.message, 'error');

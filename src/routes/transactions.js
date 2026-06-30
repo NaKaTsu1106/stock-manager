@@ -6,7 +6,7 @@ function equipmentTagNames(equipmentId) {
   return db.prepare(`
     SELECT GROUP_CONCAT(t.name) as names FROM equipment_tags et
     JOIN tags t ON et.tag_id = t.id WHERE et.equipment_id = ?
-  `).get(equipmentId)?.names || '';
+`).get(equipmentId)?.names || '';
 }
 
 router.get('/', (req, res) => {
